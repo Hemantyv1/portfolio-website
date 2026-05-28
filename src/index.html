@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hemant Singh — CS student at CSU Stanislaus building cloud infrastructure, AI tools, and full-stack apps.">
+    <meta name="keywords" content="Hemant Singh, CS Student, AWS, Cloud, React, Node.js, Portfolio">
+    <meta name="author" content="Hemant Singh">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hemant Singh — CS Student">
+    <meta property="og:description" content="CS student at CSU Stanislaus building cloud infrastructure, AI tools, and full-stack apps.">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hemant Singh — CS Student">
+    <meta name="twitter:description" content="CS student at CSU Stanislaus building cloud infrastructure, AI tools, and full-stack apps.">
+
+    <title>Hemant Singh — CS Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=23">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☁</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header hero-nav">
+        <div class="header-content">
+            <h1 class="header-name">HS</h1>
+            <div class="header-actions">
+                <a href="https://www.linkedin.com/in/hemant-singh-2b5b45296/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="social-link linkedin"
+                   aria-label="LinkedIn Profile">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs-container">
+        <button class="tab" id="about-btn" style="display: none;">About</button>
+        <button class="tab" id="projects-btn">Projects</button>
+        <button class="tab-btn" data-tab="building-content">Building</button>
+        <button class="tab-btn" data-tab="contact-content">Contact</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- ── About (default/landing) ─────────────────────────────────── -->
+        <section class="tab-content active" id="about-content">
+
+            <!-- Hero -->
+            <div class="hero-section">
+                <h2 class="hero-name hero-title">Hemant Singh</h2>
+                <p class="hero-tagline hero-sub">CS Student · CSU Stanislaus</p>
+            </div>
+
+            <div class="about-container">
+                <!-- Bio -->
+                <div class="about-text">
+                    <p class="reveal" data-delay="0">
+                        I'm a Computer Science student at California State University, Stanislaus, focused on cloud and infrastructure. I'm currently pursuing the AWS Solutions Architect certification and building hands-on projects to turn concepts into real systems.
+                    </p>
+                    <p class="reveal" data-delay="150">
+                        I enjoy designing reliable, scalable setups and learning how services connect behind the scenes. I like projects that force good fundamentals: security, automation, and clean architecture.
+                    </p>
+                    <p class="reveal" data-delay="300">
+                        I'm looking for an entry-level cloud role where I can keep shipping practical work, contribute to real deployments, and grow fast with a strong team.
+                    </p>
+                </div>
+
+                <!-- Skills -->
+                <div class="skills-section">
+                    <h3 class="section-title reveal" data-delay="120">Skills &amp; Technologies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category reveal" data-delay="0">
+                            <h4 class="skill-category-title">Cloud</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">S3</span>
+                                <span class="skill-tag">CloudFront</span>
+                                <span class="skill-tag">Lambda</span>
+                                <span class="skill-tag">API Gateway</span>
+                                <span class="skill-tag">DynamoDB</span>
+                                <span class="skill-tag">EC2</span>
+                                <span class="skill-tag">VPC</span>
+                                <span class="skill-tag">ALB</span>
+                                <span class="skill-tag">ECR</span>
+                                <span class="skill-tag">CloudWatch</span>
+                            </div>
+                        </div>
+                        <div class="skill-category reveal" data-delay="100">
+                            <h4 class="skill-category-title">Infrastructure as Code</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Terraform</span>
+                            </div>
+                        </div>
+                        <div class="skill-category reveal" data-delay="200">
+                            <h4 class="skill-category-title">CI/CD</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">GitHub Actions</span>
+                            </div>
+                        </div>
+                        <div class="skill-category reveal" data-delay="300">
+                            <h4 class="skill-category-title">Languages</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">HTML/CSS</span>
+                            </div>
+                        </div>
+                        <div class="skill-category reveal" data-delay="400">
+                            <h4 class="skill-category-title">Frontend</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">TailwindCSS</span>
+                                <span class="skill-tag">HTML/CSS</span>
+                            </div>
+                        </div>
+                        <div class="skill-category reveal" data-delay="500">
+                            <h4 class="skill-category-title">Other</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Express</span>
+                                <span class="skill-tag">REST APIs</span>
+                                <span class="skill-tag">SSE</span>
+                                <span class="skill-tag">Anthropic Claude API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ── Projects ──────────────────────────────────────────────────── -->
+        <section class="tab-content" id="projects-content">
+            <div class="hs-projects-wrap">
+                <p class="hs-section-label">Selected Work</p>
+
+                <div class="hs-bento">
+
+                    <!-- DEBATE ARENA — large -->
+                    <div class="hs-card hs-card--lg" data-index="01">
+                        <div class="hs-card-bar"></div>
+                        <div class="hs-card-body">
+                            <span class="hs-card-num">01 / 04</span>
+                            <h2 class="hs-card-title">Debate Arena</h2>
+                            <p class="hs-card-desc">Two AI agents argue any topic across 3 rounds. Real-time streaming via SSE, persistent Supabase leaderboard, emoji reactions, rate limiting, and prompt injection prevention.</p>
+                            <div class="hs-card-tags">
+                                <span class="hs-tag">React</span>
+                                <span class="hs-tag">Node.js</span>
+                                <span class="hs-tag">Claude API</span>
+                                <span class="hs-tag">Supabase</span>
+                                <span class="hs-tag">Railway</span>
+                                <span class="hs-tag">SSE</span>
+                            </div>
+                            <div class="hs-card-links">
+                                <a href="https://github.com/Hemantyv1/debate-arena" target="_blank" class="hs-link">GitHub &rarr;</a>
+                                <a href="https://debate-arena-i28s.vercel.app" target="_blank" class="hs-link hs-link--red">Live Demo &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="hs-card-ghost">01</div>
+                    </div>
+
+                    <!-- HIREFLOW — medium -->
+                    <div class="hs-card hs-card--md" data-index="02">
+                        <div class="hs-card-bar"></div>
+                        <div class="hs-card-body">
+                            <span class="hs-card-num">02 / 04</span>
+                            <h2 class="hs-card-title">HireFlow</h2>
+                            <p class="hs-card-desc">Full-stack job tracker on AWS 3-tier architecture. Terraform provisions the entire VPC, EC2, ALB, ECR stack. GitHub Actions CI/CD deploys on every push.</p>
+                            <div class="hs-card-tags">
+                                <span class="hs-tag">AWS EC2</span>
+                                <span class="hs-tag">VPC</span>
+                                <span class="hs-tag">Terraform</span>
+                                <span class="hs-tag">Docker</span>
+                                <span class="hs-tag">PostgreSQL</span>
+                            </div>
+                            <div class="hs-card-links">
+                                <a href="https://github.com/Hemantyv1/Jobs" target="_blank" class="hs-link">GitHub &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="hs-card-ghost">02</div>
+                    </div>
+
+                    <!-- SERVERLESS API — medium -->
+                    <div class="hs-card hs-card--md" data-index="03">
+                        <div class="hs-card-bar"></div>
+                        <div class="hs-card-body">
+                            <span class="hs-card-num">03 / 04</span>
+                            <h2 class="hs-card-title">Serverless Task API</h2>
+                            <p class="hs-card-desc">REST API built entirely on AWS serverless. Lambda per endpoint, API Gateway, DynamoDB NoSQL, AWS SAM IaC. Scales to zero when idle.</p>
+                            <div class="hs-card-tags">
+                                <span class="hs-tag">Lambda</span>
+                                <span class="hs-tag">API Gateway</span>
+                                <span class="hs-tag">DynamoDB</span>
+                                <span class="hs-tag">Python</span>
+                                <span class="hs-tag">AWS SAM</span>
+                            </div>
+                            <div class="hs-card-links">
+                                <a href="https://github.com/Hemantyv1/Serverless-task-api" target="_blank" class="hs-link">GitHub &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="hs-card-ghost">03</div>
+                    </div>
+
+                    <!-- CLOUD PORTFOLIO — large -->
+                    <div class="hs-card hs-card--lg" data-index="04">
+                        <div class="hs-card-bar"></div>
+                        <div class="hs-card-body">
+                            <span class="hs-card-num">04 / 04</span>
+                            <h2 class="hs-card-title">Cloud Portfolio</h2>
+                            <p class="hs-card-desc">This site. S3 static hosting behind CloudFront CDN with OAI security. Terraform provisions all infrastructure as code. GitHub Actions invalidates CloudFront cache on every push.</p>
+                            <div class="hs-card-tags">
+                                <span class="hs-tag">AWS S3</span>
+                                <span class="hs-tag">CloudFront</span>
+                                <span class="hs-tag">Terraform</span>
+                                <span class="hs-tag">GitHub Actions</span>
+                            </div>
+                            <div class="hs-card-links">
+                                <a href="https://d7zvzvdyu9kem.cloudfront.net" target="_blank" class="hs-link hs-link--red">Live Demo &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="hs-card-ghost">04</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                <span class="footer-contact-label footer-label">get in touch</span>
+                <a href="mailto:hemants1n3h@gmail.com" class="footer-contact-link">hemants1n3h@gmail.com</a>
+                <a href="https://www.linkedin.com/in/hemant-singh-2b5b45296/" target="_blank" rel="noopener noreferrer" class="footer-contact-link">linkedin/hemant-singh</a>
+            </div>
+        </section>
+
+        <!-- ── Building ──────────────────────────────────────────────────── -->
+        <section class="tab-content" id="building-content">
+            <div class="hs-projects-wrap">
+                <p class="hs-section-label">Currently Active</p>
+                <div class="building-grid">
+
+                    <div class="building-card">
+                        <div class="building-status building-status--active"></div>
+                        <div class="building-info">
+                            <h3 class="building-title">Debate Arena</h3>
+                            <p class="building-desc">Full-stack AI debate platform where two Claude-powered agents argue any topic across 3 rounds with real-time streaming, a live leaderboard, and emoji reactions.</p>
+                            <div class="building-stack">
+                                <span class="hs-tag">React</span>
+                                <span class="hs-tag">Node.js</span>
+                                <span class="hs-tag">Claude API</span>
+                                <span class="hs-tag">Supabase</span>
+                                <span class="hs-tag">Railway</span>
+                            </div>
+                            <a href="https://debate-arena-i28s.vercel.app" target="_blank" rel="noopener noreferrer" class="hs-link hs-link--red" style="margin-top:16px;display:inline-block;">Live &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="building-card">
+                        <div class="building-status building-status--progress"></div>
+                        <div class="building-info">
+                            <h3 class="building-title">AWS SAA-C03</h3>
+                            <p class="building-desc">Working through the AWS Solutions Architect Associate certification. Studying VPC internals, IAM policies, high-availability patterns, and cost optimization strategies.</p>
+                            <div class="building-stack">
+                                <span class="hs-tag">AWS</span>
+                                <span class="hs-tag">VPC</span>
+                                <span class="hs-tag">IAM</span>
+                                <span class="hs-tag">EC2</span>
+                                <span class="hs-tag">S3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="building-card">
+                        <div class="building-status building-status--active"></div>
+                        <div class="building-info">
+                            <h3 class="building-title">Portfolio Site</h3>
+                            <p class="building-desc">This site. Iterating on design and content while keeping the infra solid: S3 + CloudFront + Terraform + GitHub Actions CI/CD pipeline for automatic cache invalidation.</p>
+                            <div class="building-stack">
+                                <span class="hs-tag">AWS S3</span>
+                                <span class="hs-tag">CloudFront</span>
+                                <span class="hs-tag">Terraform</span>
+                                <span class="hs-tag">GitHub Actions</span>
+                            </div>
+                            <a href="https://d7zvzvdyu9kem.cloudfront.net" target="_blank" rel="noopener noreferrer" class="hs-link hs-link--red" style="margin-top:16px;display:inline-block;">Live &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Contact ───────────────────────────────────────────────────── -->
+        <section class="tab-content" id="contact-content">
+            <section class="contact-section" id="contact">
+                <h2 class="section-title">Get In Touch</h2>
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwvzaarg" method="POST">
+                    <input type="hidden" name="_replyto" value="hemants1n3h@gmail.com">
+                    <input type="hidden" name="_subject" value="Portfolio Contact">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <p class="form-status" id="formStatus"></p>
+                </form>
+            </section>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+    // HS Projects scroll reveal
+    (function() {
+      var cards = document.querySelectorAll('.hs-card');
+      if (!cards.length) return;
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('hs-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      cards.forEach(function(c) { obs.observe(c); });
+    })();
+    </script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-left">Hemant Singh &middot; CSU Stanislaus &middot; &copy; 2026</div>
+    </footer>
+</body>
+</html>
