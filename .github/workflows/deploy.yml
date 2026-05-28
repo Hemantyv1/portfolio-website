@@ -1,0 +1,74 @@
+name: Deploy Portfolio Website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  AWS_REGION: us-east-1
+
+jobs:
+  deploy:
+    name: Deploy to S3 and Invalidate CloudFront
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate required secrets
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+        run: |
+          missing=""
+          [ -z "$AWS_ACCESS_KEY_ID" ] && missing="${missing}AWS_ACCESS_KEY_ID "
+          [ -z "$AWS_SECRET_ACCESS_KEY" ] && missing="${missing}AWS_SECRET_ACCESS_KEY "
+          [ -z "$S3_BUCKET_NAME" ] && missing="${missing}S3_BUCKET_NAME "
+          [ -z "$CLOUDFRONT_DISTRIBUTION_ID" ] && missing="${missing}CLOUDFRONT_DISTRIBUTION_ID "
+          if [ -n "$missing" ]; then
+            echo "::error::Missing or empty GitHub secrets: $missing"
+            echo "Add them under: Repository → Settings → Secrets and variables → Actions"
+            exit 1
+          fi
+          echo "All required secrets are set."
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Sync files to S3
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        run: |
+          echo "Deploying to S3 bucket: $S3_BUCKET_NAME"
+          aws s3 sync src/ s3://$S3_BUCKET_NAME/ \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".DS_Store" \
+            --cache-control "public, max-age=3600" \
+            --metadata-directive REPLACE
+          echo "Files synced to S3 successfully."
+
+      - name: Invalidate CloudFront cache
+        env:
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+        run: |
+          echo "Invalidating CloudFront cache for distribution: $CLOUDFRONT_DISTRIBUTION_ID"
+          aws cloudfront create-invalidation \
+            --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
+            --paths "/*"
+          echo "Cache invalidation created. Propagation may take a few minutes."
+
+      - name: Deployment summary
+        run: |
+          echo "## Deployment complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Site will be live at your CloudFront URL shortly." >> $GITHUB_STEP_SUMMARY
