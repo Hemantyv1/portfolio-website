@@ -56,4 +56,10 @@ samconfig.toml
 # Temporary scripts and helper files
 *.ps1
 *.bat
-*.json
+
+# Node / frontend
+node_modules/
+dist/
+build/
+*.pem
+*.key
