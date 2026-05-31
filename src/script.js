@@ -40,6 +40,8 @@
   function initSkillTags() {
     document.querySelectorAll('.skill-tag').forEach(function (t) {
       t.classList.add('tag-visible');
+      t.style.opacity = '1';
+      t.style.transform = 'translateY(0)';
     });
   }
 
@@ -60,6 +62,7 @@
     aboutBtn && (aboutBtn.style.display = 'none');
     projectsBtn && (projectsBtn.style.display = 'block');
     initScrollReveal();
+    initSkillTags();
   }
 
   function showProjects() {
